@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class ZillowMainPage {
 
@@ -24,6 +25,10 @@ public class ZillowMainPage {
         return driver.findElement(By.xpath("(//*[contains(@class,'StyledTextButton-c11n-8-48-0__sc-n1gfmh-0 jBjBRQ')])[2]"));
     }
 
+    private WebElement clickAndHold(){
+        return driver.findElement(By.xpath("(//*[contains(@class,'UnkiAKVRjgNlgjA')])[2]"));
+    }
+
     public void open(String url){
         driver.get(url);
     }
@@ -41,6 +46,10 @@ public class ZillowMainPage {
 
         Assert.assertTrue(resultZIP().isDisplayed());
 
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(clickAndHold());
+        actions.clickAndHold().perform();
     }
 
 

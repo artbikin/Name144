@@ -21,4 +21,8 @@ public class ZillowTest1 {
         zillowMainPage.searchFor(searchName);
 
     }
+    @Test
+    public void searchTestOneMoreTime() {
+        System.out.println("Test passed");
+    }
 }
